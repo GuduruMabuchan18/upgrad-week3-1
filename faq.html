@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Section</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .answer { display: none; }
+        .active { background: #f0f0f0; font-weight: bold; }
+        .question { cursor: pointer; padding: 10px; border: 1px solid #ccc; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>FAQ Section</h2>
+
+<div class="faq">
+    <div class="question">1. What is jQuery?</div>
+    <div class="answer">jQuery is a JavaScript library.</div>
+
+    <div class="question">2. What is CDN?</div>
+    <div class="answer">CDN is Content Delivery Network.</div>
+
+    <div class="question">3. What is slideToggle?</div>
+    <div class="answer">It shows/hides elements with animation.</div>
+
+    <div class="question">4. What is DOM?</div>
+    <div class="answer">DOM stands for Document Object Model.</div>
+
+    <div class="question">5. Why use jQuery?</div>
+    <div class="answer">It simplifies JavaScript coding.</div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    $(".question").click(function(){
+        $(".question").removeClass("active");
+        $(this).addClass("active");
+
+        $(".answer").slideUp();
+        $(this).next(".answer").slideToggle();
+    });
+
+});
+</script>
+
+</body>
+</html>
